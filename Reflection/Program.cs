@@ -9,6 +9,10 @@ namespace Reflection
             PersonelVM personel = new PersonelVM() { name = "Ali", phone = "05055050505" };
             Personel pm = TypeConversion.Coversion<PersonelVM, Personel>(personel);
             Console.WriteLine(pm.ToString());
+
+            Personel personel2 = new Personel() {id=5, name = "Ali", phone = "05055050505" };
+            PersonelVM pvm = TypeConversion.Coversion<Personel, PersonelVM>(personel2);
+            Console.WriteLine(pvm.ToString());
         }
     }
     public class Personel
@@ -25,5 +29,9 @@ namespace Reflection
     {
         public string name { get; set; }
         public string phone { get; set; }
+        public override string ToString()
+        {
+            return $"PersonelVM details; name:{name} phone:{phone}";
+        }
     }
 }
