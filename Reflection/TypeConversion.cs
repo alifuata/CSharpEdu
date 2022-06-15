@@ -9,6 +9,13 @@ namespace Reflection
 {
     public static class TypeConversion
     {
+        /// <summary>
+        /// Auto type conversion from ViewModel to DTO vice versa
+        /// </summary>
+        /// <typeparam name="T">Source</typeparam>
+        /// <typeparam name="TResult">Destination</typeparam>
+        /// <param name="model">Source object</param>
+        /// <returns>Destination Object</returns>
         public static TResult Coversion<T, TResult>(T model) where TResult : class, new()
         {
             TResult result = new TResult();
